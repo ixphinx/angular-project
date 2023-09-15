@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { decks } from './configs/decks';
+import { cards, Cards } from './configs/cards';
 
 @Component({
   selector: 'my-app',
@@ -11,11 +12,20 @@ import { decks } from './configs/decks';
   templateUrl: './main.html',
 })
 export class App {
-  decks = decks;
   id!: number;
+  listedCards!: Cards[];
+  cards = cards;
+  decks = decks;
 
-  getId(id: number) {
+  getCards(id: number) {
     this.id = id;
+    this.listedCards = [];
+
+    this.cards.forEach((card) => {
+      if (card.deckId === id) {
+        this.listedCards.push(card);
+      }
+    });
   }
 }
 

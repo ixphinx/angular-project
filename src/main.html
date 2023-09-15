@@ -19,7 +19,7 @@
       <div>
         <select class="form-select" aria-label="Default select example">
           <option selected>Elije una baraja</option>
-          <option *ngFor="let deck of decks" (click)="getId(deck.id)">
+          <option *ngFor="let deck of decks" (click)="getCards(deck.id)">
             {{ deck.name }}
           </option>
         </select>
@@ -27,13 +27,11 @@
       <div style="margin-top: 2%">
         <select class="form-select" aria-label="Default select example">
           <option selected>Elije una carta</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option *ngFor="let card of listedCards">{{ card.name }}</option>
         </select>
       </div>
       <div class="row" style="margin-top: 5%">
-        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-primary">Buscar</button>
       </div>
     </div>
   </div>
