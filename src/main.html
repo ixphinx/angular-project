@@ -1,0 +1,25 @@
+<section>
+  <img
+    src="https://www.yodo1.com/wp-content/uploads/2023/05/Monopoly-GO-IP-Licensing-and-Mobile-Gaming-Success.jpg"
+    class="img-fluid"
+    alt="Monopoly GO"
+  />
+  <div style="margin-top: 8%">
+    <div class="container">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nombre de usuario {{ id }}"
+          aria-label="Nombre de usuario"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+      <select class="form-select" aria-label="Default select example">
+      <option selected>Elije la baraja que necesitas tu carta</option>
+      <option *ngFor="let deck of decks" (click)="getId(deck.id)">{{ deck.name }}</option>
+    </select>
+    </div>
+  </div>
+</section>
