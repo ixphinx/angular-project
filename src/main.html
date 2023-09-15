@@ -9,15 +9,15 @@
       <h1>Buscador de cartas</h1>
       <div>
         <select class="form-select" aria-label="Default select example">
-          <option selected>Elije una baraja</option>
+          <option selected>Elije una coleccion</option>
           <option *ngFor="let deck of decks" (click)="getCards(deck.id)">
             {{ deck.name }}
           </option>
         </select>
       </div>
-      <div style="margin-top: 2%">
+      <div style="margin-top: 2%" *ngIf="showCards">
         <select class="form-select" aria-label="Default select example">
-          <option selected>Elije una carta</option>
+          <option selected (click)="showCards = false">Elije una carta</option>
           <option *ngFor="let card of listedCards">{{ card.name }}</option>
         </select>
       </div>

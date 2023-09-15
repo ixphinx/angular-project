@@ -16,10 +16,12 @@ export class App {
   listedCards!: Cards[];
   cards = cards;
   decks = decks;
+  showCards = false;
 
   getCards(id: number) {
     this.id = id;
     this.listedCards = [];
+    this.showCards = true;
 
     this.cards.forEach((card) => {
       if (card.deckId === id) {
