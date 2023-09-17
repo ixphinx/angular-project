@@ -29,6 +29,10 @@ export class App {
       }
     });
   }
+
+  setCardsToFalse() {
+    this.showCards = false;
+  }
 }
 
 bootstrapApplication(App);
